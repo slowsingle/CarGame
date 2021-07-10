@@ -7,13 +7,7 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
-/Assets/Dice/
-/Assets/PQAssets/
-/Assets/Standard Assets/
-/Assets/Wispy Sky/
-/Assets/Animations/
-/Assets/Sci-Fi Styled Modular Pack/
-/Assets/mode/
+/Assets
 
 
 # Visual Studio 2015 cache directory
@@ -123,3 +117,6 @@ Thumbs.db
 
 #python bytecode cache, for some plugins.
 *.pyc
+
+#vscode setting
+/.vscode
