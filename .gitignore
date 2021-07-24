@@ -7,7 +7,12 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
-/Assets
+/Assets/LiquidFire Package 4 - BSH games/
+/Assets/LiquidFire Package 4 - BSH games.meta
+/Assets/Standard Assets/
+/Assets/Standard Assets.meta
+/Assets/ZRNAssets/
+/Assets/ZRNAssets.meta
 
 
 # Visual Studio 2015 cache directory
