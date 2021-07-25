@@ -8,7 +8,7 @@ public class TimeController : MonoBehaviour
     [SerializeField] private float timeLimit;
     [SerializeField] private Text remainingTime;
 
-    void Start()
+    private void Start()
     {
         int minutes = (int)(timeLimit / 60);
         int seconds = (int)(timeLimit - minutes * 60);
@@ -16,7 +16,7 @@ public class TimeController : MonoBehaviour
     }
 
  
-    void Update()
+    private void Update()
     {
         if (timeLimit > 0f)
         {
@@ -25,5 +25,10 @@ public class TimeController : MonoBehaviour
             int seconds = (int)(timeLimit - minutes * 60);
             remainingTime.text = minutes.ToString("d2") + ":" + seconds.ToString("d2");
         }
+    }
+
+    public void AddTimeLimit(float seconds)
+    {
+        timeLimit += seconds;
     }
 }

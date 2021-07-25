@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarMove : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class CarMove : MonoBehaviour
     [SerializeField] private float maxSteeringAngle; 
 
     // 復帰
+    [SerializeField] private TimeController timeController;
     private bool isReadyRestart = true;
 
     private void Start()
     {
-        transform.position = initTransform.position;
-        transform.rotation = initTransform.rotation;
+        Restart();
     }
 
     private void FixedUpdate()
@@ -45,10 +46,22 @@ public class CarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.R) && isReadyRestart)
         {
             isReadyRestart = false;
-            transform.position = initTransform.position;
-            transform.rotation = initTransform.rotation;
+            Restart();
             Invoke("SetIsReadyRestart", 3.0f);
+
+            // 復帰するたびにペナルティとして残り時間が減らされる
+            timeController.AddTimeLimit(-20f);
         }
+    }
+
+
+    private void Restart()
+    {
+        // 初期位置に配置し、速度をゼロにする
+        transform.position = initTransform.position;
+        transform.rotation = initTransform.rotation;
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = Vector3.zero;
     }
 
     private void SetIsReadyRestart()
