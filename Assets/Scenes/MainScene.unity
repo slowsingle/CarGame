@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 639763587}
   - component: {fileID: 639763589}
   - component: {fileID: 639763588}
+  - component: {fileID: 639763590}
   m_Layer: 5
   m_Name: ResultViewer
   m_TagString: Untagged
@@ -909,6 +910,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639763586}
   m_CullTransparentMesh: 0
+--- !u!114 &639763590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639763586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0e97ed16392674fac94e939b372b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultText: {fileID: 425061541}
 --- !u!1 &674345669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 313eda13f7c5ca0418baa6dfde31d7a6,
@@ -2261,6 +2275,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsSpawner: {fileID: 620761465}
   remainingCoinInfo: {fileID: 1293551763}
+  gameClearEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 639763590}
+        m_MethodName: GameClear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1757602057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 313eda13f7c5ca0418baa6dfde31d7a6,
@@ -2515,8 +2543,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b16e78b1e8fdb949b94af7682706b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 400
+  timeLimit: 300
   remainingTime: {fileID: 1062873123}
+  gameOverEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 639763590}
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1847826689
 GameObject:
   m_ObjectHideFlags: 0
